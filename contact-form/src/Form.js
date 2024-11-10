@@ -42,7 +42,9 @@ export default function Form() {
       <div className='flex gap-5 justify-around'>
         <label className='flex flex-col gap-3 text-base w-1/2 text-gray-900'>
           First Name:
-          <input className='border border-grey-900 p-4 rounded-lg' {...register("firstName", {required: 'This field is required'})} 
+          <input className={`border-2 ${errors.firstName ? 'border-red-500' : 'border-grey-900'} focus:border-green-500 
+          p-4 rounded-lg focus:ring-green-200 focus:outline-none`} 
+            {...register("firstName", {required: 'This field is required'})} 
             placeholder='First Name'/>
           <ErrorMessage 
             errors={errors}
@@ -52,7 +54,7 @@ export default function Form() {
         </label>
         <label className='flex flex-col gap-3 text-base w-1/2'>
           Last Name:
-          <input className='border border-grey-900 p-4 rounded-lg'
+          <input className={`border-2 p-4 rounded-lg ${errors.lastName ? 'border-red-500' : 'border-grey-900'}`}
             {...register("lastName", {required: 'This field is required'})} placeholder='Last Name'/>
           <ErrorMessage 
             errors={errors}
@@ -79,7 +81,7 @@ export default function Form() {
           Query Type:
           <div className='flex justify-between inline-block'>
             <label className='flex items-center gap-3 border-2 border-grey-900 p-4 rounded-lg w-2/5'>
-            <input {...register('query', {required: 'Please select a query type'})} type='radio' value='General Enquiry'/> General Enquiry</label>
+            <input className='focus:bg-green-500' {...register('query', {required: 'Please select a query type'})} type='radio' value='General Enquiry'/> General Enquiry</label>
             <label className='flex items-center gap-3 border border-grey-900 p-4 w-2/5 rounded-lg'>
             <input type='radio' {...register('query')} value='Support Request'/> Support Request</label>
           </div>
