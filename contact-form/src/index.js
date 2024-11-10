@@ -6,7 +6,7 @@ import './index.css';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <div className='flex justify-center items-center h-screen'>
+    <div className=' flex justify-center items-center h-screen bg-green-200'>
       <Form />
     </div>
   </React.StrictMode>
